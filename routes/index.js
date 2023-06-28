@@ -21,9 +21,11 @@ const injectRoutes = (api) => {
   api.post('/users', UsersController.postNew);
   api.get('/users/me', xTokenAuthenticate, UsersController.getMe);
 
-  api.post('/files', xTokenAuthenticate, FilesController.postUpload);
+  api.route('/files')
+		.post(xTokenAuthenticate, FilesController.postUpload)
+  		.get(xTokenAuthenticate, FilesController.getIndex);
+
   api.get('/files/:id', xTokenAuthenticate, FilesController.getShow);
-  api.get('/files', xTokenAuthenticate, FilesController.getIndex);
   api.put('/files/:id/publish', xTokenAuthenticate, FilesController.putPublish);
   api.put('/files/:id/unpublish', xTokenAuthenticate, FilesController.putUnpublish);
   api.get('/files/:id/data', FilesController.getFile);
