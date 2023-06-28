@@ -45,3 +45,7 @@ Start the Redis and MongoDB services on your system and run `yarn start-server` 
 ## Documentation
 
 + TODO: Generate OpenAPI documentation with [**apidoc**](https://www.npmjs.com/package/apidoc).
++
+## Authors
+- Peter Sanctus [here](@Sanctus-Peter)
+- Mahadi Abuhuraira [here](@mamt4real)
